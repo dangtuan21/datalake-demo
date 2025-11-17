@@ -21,10 +21,13 @@ import uuid
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+# Configuration constants
+BATCH_SIZE = 200
+
 class IncrementalETLPipeline:
     def __init__(self):
         self.conn = get_snowflake_connection()
-        self.batch_size = 1000
+        self.batch_size = BATCH_SIZE
         
     def get_last_processed_row(self) -> int:
         """Get the last row number that was processed"""

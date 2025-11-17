@@ -7,7 +7,7 @@ A production-ready data lake implementation using **Snowflake**, **Python**, and
 This project demonstrates building a scalable, enterprise-grade data lake for retail analytics, featuring:
 
 - **☁️ Snowflake** - Cloud data warehouse with optimized schemas
-- **🔄 Incremental ETL** - Manual batch processing with deduplication
+- **🔄 Incremental ETL** - Manual batch processing (configurable batch size) with deduplication
 - **🔌 REST API** - FastAPI endpoints for data access
 - **📊 Interactive Dashboard** - Streamlit visualization interface
 - **📈 Real-time Analytics** - Live metrics and progress tracking
@@ -21,7 +21,7 @@ Excel Data (541K rows) → Python ETL → Snowflake → FastAPI → Streamlit Da
 
 ### **Data Flow**
 1. **Raw Data**: Excel file with retail transactions
-2. **ETL Processing**: Incremental loading in 1K batches
+2. **ETL Processing**: Incremental loading in configurable batches (default: 200 records)
 3. **Data Warehouse**: Snowflake with RAW_DATA, PROCESSED_DATA, ANALYTICS, METADATA schemas
 4. **API Layer**: RESTful endpoints for data access
 5. **Visualization**: Interactive dashboard with real-time charts
@@ -154,7 +154,7 @@ datalake-demo/
 ## 🛠️ Technical Features
 
 ### **🔄 Incremental ETL**
-- **Batch Processing**: 1K records per batch for manageable loads
+- **Batch Processing**: Configurable batch size (default: 200 records) for manageable loads
 - **Deduplication**: Prevents duplicate data insertion
 - **UPSERT Logic**: Smart updates for dimension tables
 - **Error Recovery**: Graceful handling of failures
@@ -170,6 +170,23 @@ datalake-demo/
 - **Optimized Queries**: Efficient SQL with proper indexing
 - **Caching**: API response caching for faster dashboard loads
 - **Scalable Design**: Ready for millions of records
+
+## ⚙️ Configuration
+
+### **Batch Size Configuration**
+To change the batch size, modify the `BATCH_SIZE` constant in:
+- `etl/incremental_etl_pipeline.py` (line 25)
+- `dashboard/app.py` (line 20)
+
+```python
+# Configuration constants
+BATCH_SIZE = 200  # Change this value as needed
+```
+
+**Recommended batch sizes:**
+- **Small datasets**: 100-500 records
+- **Medium datasets**: 500-2000 records  
+- **Large datasets**: 1000-5000 records
 
 ## 🔧 Advanced Usage
 
@@ -198,7 +215,7 @@ curl http://localhost:8000/health
 
 ### **Complete Data Loading**
 The system is designed to handle the full 541K+ records:
-- **Estimated Time**: ~9 hours for all 542 batches
+- **Estimated Time**: ~45 hours for all 2,710 batches
 - **Storage**: ~500MB in Snowflake
 - **Performance**: Optimized for large-scale processing
 

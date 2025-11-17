@@ -12,10 +12,12 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 import requests
-from datetime import datetime, timedelta
-import time
+from datetime import datetime
+import json
+
+# Configuration constants
+BATCH_SIZE = 200
 
 # Page config
 st.set_page_config(
@@ -475,9 +477,9 @@ def show_etl_status():
     st.write(f"**Progress**: {current_records:,} / {total_possible:,} records ({progress_pct:.1f}%)")
     
     # Next batch info
-    next_batch = (current_records // 1000) + 1
+    next_batch = (current_records // BATCH_SIZE) + 1
     next_start = current_records + 1
-    next_end = min(next_start + 999, total_possible)
+    next_end = min(next_start + BATCH_SIZE - 1, total_possible)
     
     st.info(f"**Next Batch**: Batch {next_batch} (rows {next_start:,} - {next_end:,})")
     
