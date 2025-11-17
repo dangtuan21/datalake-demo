@@ -1,0 +1,26 @@
+# Core dependencies
+pandas==2.1.4
+numpy==1.24.3
+openpyxl==3.1.2
+
+# Snowflake
+snowflake-connector-python==3.6.0
+snowflake-sqlalchemy==1.5.1
+
+# API Framework
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.0
+
+# Data Processing
+sqlalchemy==2.0.23
+python-multipart==0.0.6
+
+# Utilities
+python-dotenv==1.0.0
+loguru==0.7.2
+
+# Development
+jupyter==1.0.0
+matplotlib==3.8.2
+seaborn==0.13.0

@@ -1,0 +1,177 @@
+{
+  "file_info": {
+    "source_file": "/Users/tuandang/personal/research/AI/datalake-demo/data/raw/online-retail.xlsx",
+    "processed_at": "2025-11-16T12:12:29.952888",
+    "total_rows": 541909,
+    "total_columns": 8
+  },
+  "columns": {
+    "InvoiceNo": {
+      "data_type": "object",
+      "non_null_count": 541909,
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 25900,
+      "memory_usage": 19694676,
+      "top_values": {
+        "573585": 1114,
+        "581219": 749,
+        "581492": 731,
+        "580729": 721,
+        "558475": 705
+      }
+    },
+    "StockCode": {
+      "data_type": "object",
+      "non_null_count": 541909,
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 4070,
+      "memory_usage": 20543632,
+      "top_values": {
+        "85123A": 2313,
+        "22423": 2203,
+        "85099B": 2159,
+        "47566": 1727,
+        "20725": 1639
+      }
+    },
+    "Description": {
+      "data_type": "object",
+      "non_null_count": 540455,
+      "null_count": 1454,
+      "null_percentage": 0.27,
+      "unique_values": 4223,
+      "memory_usage": 40929213,
+      "top_values": {
+        "WHITE HANGING HEART T-LIGHT HOLDER": 2369,
+        "REGENCY CAKESTAND 3 TIER": 2200,
+        "JUMBO BAG RED RETROSPOT": 2159,
+        "PARTY BUNTING": 1727,
+        "LUNCH BAG RED RETROSPOT": 1638
+      }
+    },
+    "Quantity": {
+      "data_type": "int64",
+      "non_null_count": 541909,
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 722,
+      "memory_usage": 4335404,
+      "min": -80995.0,
+      "max": 80995.0,
+      "mean": 9.55224954743324,
+      "std": 218.08115785023384
+    },
+    "InvoiceDate": {
+      "data_type": "datetime64[ns]",
+      "non_null_count": 541909,
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 23260,
+      "memory_usage": 4335404,
+      "min": "2010-12-01T08:26:00",
+      "max": "2011-12-09T12:50:00"
+    },
+    "UnitPrice": {
+      "data_type": "float64",
+      "non_null_count": 541909,
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 1630,
+      "memory_usage": 4335404,
+      "min": -11062.06,
+      "max": 38970.0,
+      "mean": 4.611113626088514,
+      "std": 96.75985306117937
+    },
+    "CustomerID": {
+      "data_type": "float64",
+      "non_null_count": 406829,
+      "null_count": 135080,
+      "null_percentage": 24.93,
+      "unique_values": 4372,
+      "memory_usage": 4335404,
+      "min": 12346.0,
+      "max": 18287.0,
+      "mean": 15287.690570239585,
+      "std": 1713.600303321598
+    },
+    "Country": {
+      "data_type": "object",
+      "non_null_count": 541909,
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 38,
+      "memory_usage": 33802358,
+      "top_values": {
+        "United Kingdom": 495478,
+        "Germany": 9495,
+        "France": 8557,
+        "EIRE": 8196,
+        "Spain": 2533
+      }
+    }
+  },
+  "data_quality": {
+    "total_duplicates": 5268,
+    "completely_null_rows": 0,
+    "rows_with_any_null": 135080,
+    "negative_quantities": 10624,
+    "zero_quantities": 0,
+    "negative_prices": 2,
+    "zero_prices": 2515
+  },
+  "sample_data": [
+    {
+      "InvoiceNo": "572891",
+      "StockCode": "23343",
+      "Description": "20713",
+      "Quantity": "-400",
+      "InvoiceDate": "2011-10-26 14:14:00",
+      "UnitPrice": "0.0",
+      "CustomerID": "nan",
+      "Country": "United Kingdom"
+    },
+    {
+      "InvoiceNo": "536522",
+      "StockCode": "72800B",
+      "Description": " 4 PURPLE FLOCK DINNER CANDLES",
+      "Quantity": "2",
+      "InvoiceDate": "2010-12-01 12:49:00",
+      "UnitPrice": "2.55",
+      "CustomerID": "15012.0",
+      "Country": "United Kingdom"
+    },
+    {
+      "InvoiceNo": "537044",
+      "StockCode": "72800B",
+      "Description": " 4 PURPLE FLOCK DINNER CANDLES",
+      "Quantity": "12",
+      "InvoiceDate": "2010-12-05 10:52:00",
+      "UnitPrice": "2.55",
+      "CustomerID": "18055.0",
+      "Country": "United Kingdom"
+    },
+    {
+      "InvoiceNo": "539595",
+      "StockCode": "72800B",
+      "Description": " 4 PURPLE FLOCK DINNER CANDLES",
+      "Quantity": "2",
+      "InvoiceDate": "2010-12-20 13:43:00",
+      "UnitPrice": "5.06",
+      "CustomerID": "nan",
+      "Country": "United Kingdom"
+    },
+    {
+      "InvoiceNo": "540247",
+      "StockCode": "72800B",
+      "Description": " 4 PURPLE FLOCK DINNER CANDLES",
+      "Quantity": "1",
+      "InvoiceDate": "2011-01-05 15:56:00",
+      "UnitPrice": "2.55",
+      "CustomerID": "15464.0",
+      "Country": "United Kingdom"
+    }
+  ]
+}
